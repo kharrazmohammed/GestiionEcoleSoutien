@@ -18,7 +18,7 @@ public class etudiant {
 
     public void supprimer_etudiant(int id){
         Connection con=DB.getConnection();
-        //String sqlquery = "DELETE  FROM eleve WHERE id_eleve = ?";
+        String sqlquery = "DELETE  FROM eleve WHERE id_eleve = ?";
 
     }
 
