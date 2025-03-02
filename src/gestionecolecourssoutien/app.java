@@ -26,20 +26,16 @@ public class app extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Load and scale the logo
         ImageIcon logoIcon = new ImageIcon(getClass().getResource("images/ENC.jpg"));
         Image scaledLogo = logoIcon.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
         logoLabel = new JLabel(new ImageIcon(scaledLogo), SwingConstants.CENTER);
 
-        // Greeting message
         messageLabel = new JLabel("Bonjour chez École Nouvelle Chance", SwingConstants.CENTER);
         messageLabel.setFont(new Font("Arial", Font.BOLD, 18));
 
-        // Progress Bar
         progressBar = new JProgressBar(0, 100);
         progressBar.setStringPainted(true);
 
-        // Adding components
         add(logoLabel, BorderLayout.CENTER);
         add(messageLabel, BorderLayout.NORTH);
         add(progressBar, BorderLayout.SOUTH);
