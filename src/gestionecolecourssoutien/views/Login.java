@@ -1,12 +1,7 @@
 package gestionecolecourssoutien.views;
-
-
-
-
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 
 public class Login extends JFrame {
@@ -76,6 +71,16 @@ public class Login extends JFrame {
     private void onLogin() {
         String username = usernameField.getText();
         String password = new String(passwordField.getPassword());
+        if (username.trim().isEmpty() || password.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                            "Veuillez remplir tous les champs.",
+                            "Erreur",
+                            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if ( username.trim().equals("Admin") || password.trim().equals("Admin") ) {
+            dispose();
+        }
 
     }
 
