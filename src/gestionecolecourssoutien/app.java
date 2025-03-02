@@ -23,6 +23,7 @@ public class app extends JFrame {
         setSize(600, 400);
         setResizable(false);
         setUndecorated(true);
+        getContentPane().setBackground(Color.WHITE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
@@ -31,11 +32,12 @@ public class app extends JFrame {
         logoLabel = new JLabel(new ImageIcon(scaledLogo), SwingConstants.CENTER);
 
         messageLabel = new JLabel("Bonjour chez École Nouvelle Chance", SwingConstants.CENTER);
-        messageLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        messageLabel.setFont(new Font("poppins", Font.BOLD, 24));
 
         progressBar = new JProgressBar(0, 100);
         progressBar.setStringPainted(true);
-
+        progressBar.setPreferredSize(new Dimension(400, 40));
+        progressBar.setFont(new Font("poppins", Font.BOLD, 22));
         add(logoLabel, BorderLayout.CENTER);
         add(messageLabel, BorderLayout.NORTH);
         add(progressBar, BorderLayout.SOUTH);
@@ -45,7 +47,7 @@ public class app extends JFrame {
         Thread thread = new Thread(() -> {
             for (int i = 0; i <= 100; i++) {
                 try {
-                    Thread.sleep(50);
+                    Thread.sleep(30);
                     progressBar.setValue(i);
                 } catch (InterruptedException e) {
                     e.printStackTrace();

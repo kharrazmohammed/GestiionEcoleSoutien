@@ -5,6 +5,8 @@ package gestionecolecourssoutien.views;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 
 public class Login extends JFrame {
@@ -23,6 +25,7 @@ public class Login extends JFrame {
         setSize(781, 645);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        getContentPane().setBackground(Color.WHITE);
         setLocationRelativeTo(null);
         setLayout(new GridBagLayout());
 
@@ -34,27 +37,39 @@ public class Login extends JFrame {
 
         // Load and set the logo
         ImageIcon logoIcon = new ImageIcon(getClass().getResource("../images/ENC.jpg")); // Ensure logo.png is in src/resources/
-        Image scaledLogo = logoIcon.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+        Image scaledLogo = logoIcon.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
         logoLabel = new JLabel(new ImageIcon(scaledLogo));
         add(logoLabel, gbc);
 
         gbc.gridy++;
         usernameField = new JTextField();
         usernameField.setPreferredSize(new Dimension(440, 50));
-        usernameField.setBorder(BorderFactory.createTitledBorder("Username"));
+        TitledBorder brdusername = BorderFactory.createTitledBorder("Username");
+        brdusername.setTitleFont(new Font("Poppins", Font.BOLD, 15));
+        usernameField.setBorder(brdusername);
+
         add(usernameField, gbc);
 
         gbc.gridy++;
         passwordField = new JPasswordField();
         passwordField.setPreferredSize(new Dimension(440, 50));
-        passwordField.setBorder(BorderFactory.createTitledBorder("Password"));
+        TitledBorder brdpass = BorderFactory.createTitledBorder("Password");
+        brdpass.setTitleFont(new Font("Poppins", Font.BOLD, 15));
+        passwordField.setBorder(brdpass);
+        passwordField.setFont(new Font("poppins", Font.BOLD, 15));
         add(passwordField, gbc);
 
         gbc.gridy++;
         loginButton = new JButton("Login");
         loginButton.addActionListener(e -> onLogin());
         loginButton.setPreferredSize(new Dimension(440, 50));
+        loginButton.setFont(new Font("Poppins", Font.BOLD, 15));
+        loginButton.setBackground(new Color(250, 57, 67));
+        loginButton.setForeground(Color.WHITE);
+        loginButton.setBorder(BorderFactory.createLineBorder(new Color(255, 255, 255), 2));
+        loginButton.setFocusPainted(false);
         add(loginButton, gbc);
+
     }
 
     private void onLogin() {
