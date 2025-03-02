@@ -17,8 +17,23 @@ public class etudiant {
     }
 
     public void supprimer_etudiant(int id){
-        Connection con=DB.getConnection();
-        //String sqlquery = "DELETE  FROM eleve WHERE id_eleve = ?";
+        Connection con =DB.getConnection();
+        String sqlquery = "DELETE * FROM eleve WHERE id_eleve = ?";
+        PreparedStatement prs = null;
+        ResultSet rs = null;
+        try {
+            prs = con.prepareStatement(sqlquery);
+            prs.setInt(1,id);
+            rs = prs.executeQuery();
+            if(rs.next()){
+                System.out.println("supprimer_etudiant : "+id);
+            }else{
+                System.out.println("non supprimer_etudiant : "+id);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
