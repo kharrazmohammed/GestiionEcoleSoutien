@@ -7,16 +7,21 @@ import java.sql.ResultSet;
 public class etudiant {
     String nometd,prenometd,numtelephone;
     Date datenaissance;
-
     public etudiant(String nometd, String prenometd, String numtelephone, Date datenaissance) {
         this.nometd = nometd;
         this.prenometd = prenometd;
         this.numtelephone = numtelephone;
         this.datenaissance = datenaissance;
     }
-
     public etudiant() {
     }
+
+    public void supprimer_etudiant(int id){
+        Connection con=DB.getConnection();
+        String sqlquery = "DELETE  FROM eleve WHERE id_eleve = ?";
+
+    }
+
 
     public boolean inscrire_etudiant() {
         String nom_etudiant = this.nometd;
@@ -65,60 +70,36 @@ public class etudiant {
                 etudiant = new etudiant(rs.getString("nom"),rs.getString("prenom"),rs.getString("contact"),rs.getDate("date_naissance"));
             }
             return etudiant;
-
-
         }catch (SQLException e){
             return null;
 
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public String getNometd() {
         return nometd;
     }
-
     public String getPrenometd() {
         return prenometd;
     }
-
     public String getNumtelephone() {
         return numtelephone;
     }
-
     public Date getDatenaissance() {
         return datenaissance;
     }
-
     public void setNometd(String nometd) {
         this.nometd = nometd;
     }
-
     public void setPrenometd(String prenometd) {
         this.prenometd = prenometd;
     }
-
     public void setNumtelephone(String numtelephone) {
         this.numtelephone = numtelephone;
     }
-
     public void setDatenaissance(Date datenaissance) {
         this.datenaissance = datenaissance;
     }
-
     @Override
     public String toString() {
         return "etudiant{" +
@@ -128,7 +109,6 @@ public class etudiant {
                 ", datenaissance=" + datenaissance +
                 '}';
     }
-
     public static void main(String[] args) {
         etudiant etd = new etudiant();
         etudiant recup = etd.recuper_etudiant(1);
