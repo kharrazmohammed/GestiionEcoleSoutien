@@ -47,6 +47,7 @@ public class Login extends JFrame {
         TitledBorder brdusername = BorderFactory.createTitledBorder("Username");
         brdusername.setTitleFont(new Font("Poppins", Font.BOLD, 15));
         usernameField.setBorder(brdusername);
+        usernameField.setFont(new Font("poppins", Font.BOLD, 15));
 
         add(usernameField, gbc);
 
@@ -76,8 +77,6 @@ public class Login extends JFrame {
         String username = usernameField.getText();
         String password = new String(passwordField.getPassword());
 
-        // TODO: Add authentication logic
-        JOptionPane.showMessageDialog(this, "Login clicked with Username: " + username);
     }
 
     public static void main(String[] args) {
