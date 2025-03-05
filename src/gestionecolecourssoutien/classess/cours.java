@@ -1,4 +1,4 @@
 package gestionecolecourssoutien.classess;
 
-public class matiere {
+public class cours {
 }

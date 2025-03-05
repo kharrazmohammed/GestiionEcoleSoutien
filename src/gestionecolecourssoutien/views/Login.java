@@ -79,7 +79,11 @@ public class Login extends JFrame {
             return;
         }
         if ( username.trim().equals("Admin") || password.trim().equals("Admin") ) {
+
+
             dispose();
+            Dashboard dash = new Dashboard();
+            dash.setVisible(true);
         }
 
     }
