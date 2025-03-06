@@ -1,5 +1,6 @@
 package gestionecolecourssoutien.views;
 
+import gestionecolecourssoutien.classess.EtudiantManagement;
 import gestionecolecourssoutien.classess.ProfessorManagement;
 
 import javax.swing.*;
@@ -66,6 +67,9 @@ public class Dashboard extends JFrame {
             switch (buttonText) {
                 case "Gérer les Étudiants":
                     JOptionPane.showMessageDialog(null, "Ouverture de la gestion des étudiants...");
+                    dispose();
+                    EtudiantManagement em = new EtudiantManagement();
+                    em.setVisible(true);
                     break;
                 case "Gérer les Professeurs":
                     JOptionPane.showMessageDialog(null, "Ouverture de la gestion des professeurs...");
