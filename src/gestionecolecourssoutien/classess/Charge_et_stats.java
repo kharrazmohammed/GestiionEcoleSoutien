@@ -30,7 +30,7 @@ public class Charge_et_stats extends JFrame {
         txtDescription = new JTextField();
         formPanel.add(txtDescription);
 
-        formPanel.add(new JLabel("Montant (€) :"));
+        formPanel.add(new JLabel("Montant (DH) :"));
         txtAmount = new JTextField();
         formPanel.add(txtAmount);
 
