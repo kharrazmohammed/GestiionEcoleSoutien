@@ -94,8 +94,8 @@ public class Dashboard extends JFrame {
                 case "Finances & Paiements":
                     JOptionPane.showMessageDialog(null, "Ouverture du module de paiements...");
                     dispose();
-                    Charge_et_stats cm = new Charge_et_stats();
-                    cm.setVisible(true);
+                    Charge_et_stats com = new Charge_et_stats();
+                    com.setVisible(true);
                     break;
                 case "Se Déconnecter":
                     int response = JOptionPane.showConfirmDialog(null, "Voulez-vous vraiment vous déconnecter ?",
