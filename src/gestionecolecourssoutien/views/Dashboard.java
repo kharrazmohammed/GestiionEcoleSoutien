@@ -1,5 +1,7 @@
 package gestionecolecourssoutien.views;
 
+import gestionecolecourssoutien.classess.Charge_et_stats;
+import gestionecolecourssoutien.classess.Cours;
 import gestionecolecourssoutien.classess.EtudiantManagement;
 import gestionecolecourssoutien.classess.ProfessorManagement;
 
@@ -79,6 +81,9 @@ public class Dashboard extends JFrame {
                     break;
                 case "Gérer les Cours":
                     JOptionPane.showMessageDialog(null, "Ouverture de la gestion des cours...");
+                    dispose();
+                    Cours cm = new Cours();
+                    cm.setVisible(true);
                     break;
                 case "Gérer les Examens":
                     JOptionPane.showMessageDialog(null, "Ouverture de la gestion des examens...");
@@ -88,6 +93,9 @@ public class Dashboard extends JFrame {
                     break;
                 case "Finances & Paiements":
                     JOptionPane.showMessageDialog(null, "Ouverture du module de paiements...");
+                    dispose();
+                    Charge_et_stats cm = new Charge_et_stats();
+                    cm.setVisible(true);
                     break;
                 case "Se Déconnecter":
                     int response = JOptionPane.showConfirmDialog(null, "Voulez-vous vraiment vous déconnecter ?",
